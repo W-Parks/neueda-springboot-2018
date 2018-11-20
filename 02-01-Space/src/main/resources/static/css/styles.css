@@ -1,0 +1,49 @@
+@charset "utf-8";
+/* CSS Document */
+
+h1 {color: maroon; font-weight: 800; font-family: 'Oswald', sans-serif;}
+
+body {font-family: 'Montserrat', sans-serif;}
+
+#container{
+	background-color:#ffffff; 
+	padding:30px; 
+	width:80%; 
+	margin:0 auto;
+}
+
+#banner{
+	width:100%;
+}
+
+.navbar {width:100%;}
+
+.navigation {
+	height: 70px;
+	width: 100%;
+	background: #262626;
+	font-size: 11pt;
+	top: 0;			
+}
+
+.navigation ul{
+	margin: 0;
+	height: 50px;
+}
+
+.navigation li{
+	display: inline;
+}
+
+.navigation a{
+	color:#fff;
+	display: inline-block;
+	width: 100px;
+	text-align: center;
+	text-decoration: none;
+	padding: 24px 0;
+	font-weight: 600;
+	border-right: 1px solid #2e2e2e;
+}
+
+.navigation a:hover{background:#2e2e2e;}
