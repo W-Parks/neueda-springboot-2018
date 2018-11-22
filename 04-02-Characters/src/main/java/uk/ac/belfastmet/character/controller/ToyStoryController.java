@@ -7,23 +7,23 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import uk.ac.belfastmet.dwarf.domain.Dwarf;
-import uk.ac.belfastmet.dwarf.service.DwarfService;
+import uk.ac.belfastmet.character.domain.Character;
+import uk.ac.belfastmet.character.service.CharacterService;;
 
 @Controller
 @RequestMapping
 public class ToyStoryController {
 
-	@GetMapping("/tolkien")
-	public String Tolkien(Model model) {
+	@GetMapping("/toystory")
+	public String ToyStory(Model model) {
 		
-		DwarfService dwarfService = new DwarfService();
-		ArrayList<Dwarf> tolkienDwarfs = dwarfService.getTolkienDwarfs();
+		CharacterService characterService = new CharacterService();
+		ArrayList<Character> toyStoryCharacters = characterService.getToyStoryCharacters();
 		
-		model.addAttribute("pageTitle", "Tolkien!");
-		model.addAttribute("tolkienDwarfs", tolkienDwarfs);
+		model.addAttribute("pageTitle", "Toy Story");
+		model.addAttribute("toyStoryCharacters", toyStoryCharacters);
 		
-		return "tolkien";
+		return "toystory";
 	}
 	
 }

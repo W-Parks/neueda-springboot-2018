@@ -18,10 +18,10 @@ public class ShrekController {
 	public String Shrek(Model model) {
 		
 		CharacterService characterService = new CharacterService();
-		ArrayList<Character> characterDwarfs = characterService.getShrekCharacters();
+		ArrayList<Character> shrekCharacters= characterService.getShrekCharacters();
 		
 		model.addAttribute("pageTitle", "Shrek!");
-		model.addAttribute("shrekCharacter", shrekCharacter);
+		model.addAttribute("shrekCharacter", shrekCharacters);
 		return "shrek";
 	}
 	
