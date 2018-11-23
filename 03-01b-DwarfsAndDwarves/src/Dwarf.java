@@ -2,6 +2,7 @@
 public class Dwarf {
 
 	//comment
+	//adding a new comment
 	
 	private String name;
 	private String author;
