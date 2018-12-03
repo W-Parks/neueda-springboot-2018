@@ -25,7 +25,7 @@ public class DisneyController {
 	@GetMapping("/disney")
 	public String Disney(Model model) {
 		
-		model.addAttribute("pageTitle", "Disney!");		
+		model.addAttribute("pageTitle", "Disney");		
 		//DwarfService dwarfService = new DwarfService();				
 		//model.addAttribute("disneyDwarfs", disneyDwarfs);
 		model.addAttribute("dwarfs", this.dwarfRepository.findByAuthor("Disney"));

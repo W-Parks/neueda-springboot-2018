@@ -28,7 +28,7 @@ public class TolkienController {
 		//DwarfService dwarfService = new DwarfService();
 		//ArrayList<Dwarf> tolkienDwarfs = dwarfService.getTolkienDwarfs();
 		
-		model.addAttribute("pageTitle", "Tolkien!");
+		model.addAttribute("pageTitle", "Tolkien");
 		//model.addAttribute("tolkienDwarfs", tolkienDwarfs);
 		model.addAttribute("dwarfs", this.dwarfRepository.findByAuthor("Tolkien"));
 		

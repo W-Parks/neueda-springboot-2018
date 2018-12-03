@@ -16,7 +16,7 @@
 	<nav th:replace="layouts/nav :: navFragment"></nav><!-- navbar -->			
 	<div class="row"><!-- jumbotron start -->
 		<div class="jumbotron">
-			<h1 th:text="${dwarfs[0].author}">Dwarfs</h1>
+			<h1 th:text="${pageTitle} + ' ' + Dwarfs">Dwarfs</h1>
 		  	<p>There are 7 Disney Dwarfs and 13 Tolkien Dwarves</p>
 		</div>
 	</div><!-- jumbotron end -->
