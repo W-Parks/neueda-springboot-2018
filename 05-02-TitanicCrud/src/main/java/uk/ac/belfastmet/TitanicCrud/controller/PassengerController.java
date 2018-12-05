@@ -34,4 +34,12 @@ public class PassengerController {
 		return "viewPassengers";
 	}
 	
+	@GetMapping("/delete/{passengerId}")
+	public String deletePassenger(@PathVariable("passengerId") Integer passengerId, Model model, RedirectAttributes redirectAttributes) {
+		
+		this.passengerRepository.deleteById(passengerId);
+		redirectAttributes.addFlashAttribute("message", "Passenger Deleted Successfully");
+		return "redirect:/passengers";
+	}
+	
 }
