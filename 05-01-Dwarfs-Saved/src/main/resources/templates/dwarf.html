@@ -18,8 +18,13 @@
 		<div class="jumbotron">
 			<h1 th:text="${pageTitle} + ' ' + Dwarfs">Dwarfs</h1>
 		  	<p>There are 7 Disney Dwarfs and 13 Tolkien Dwarves</p>
+		  	<br />
 		</div>
 	</div><!-- jumbotron end -->
+				
+	<div class="alert alert-success" role="alert" th:if="${message}">
+		<p th:text="${message}"></p>	
+	</div>			
 				
 	<div class="container">
 		<p>Disney Dwarfs</p>
@@ -34,7 +39,7 @@
 				<tr th:each="dwarf: ${dwarfs}">
 					<td th:text="${dwarf.name}"></td>
 					<td><img src="../static/images/Happy.png" th:src="@{/images/}+${dwarf.image}"></img></td>
-					<td><a href="#" th:href="@{/view/} + ${dwarf.dwarfId}">View</a></td>
+					<td><a href="#" th:href="@{/view/} + ${dwarf.dwarfId}">View</a><br><a href="#" th:href="@{/delete/} + ${dwarf.dwarfId}">Delete</a></td>
 				</tr>	
 			</tbody>
 		</table>
