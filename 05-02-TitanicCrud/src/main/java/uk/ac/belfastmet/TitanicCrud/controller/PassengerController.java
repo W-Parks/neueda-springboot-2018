@@ -3,7 +3,9 @@ package uk.ac.belfastmet.TitanicCrud.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import uk.ac.belfastmet.TitanicCrud.repository.PassengerRepository;
 
@@ -24,6 +26,12 @@ public class PassengerController {
 		model.addAttribute("passengers",this.passengerRepository.findAll());
 		return "passengersPage";
 	}
-	
+
+	@GetMapping("/view/{passengerId}")
+	public String viewPassenger(@PathVariable("passengerId") Integer passengerId, Model model) {
+		model.addAttribute("pageTitle", "View");
+		model.addAttribute("passenger", this.passengerRepository.findByPassengerId(passengerId));
+		return "viewPassengers";
+	}
 	
 }

@@ -32,6 +32,8 @@
 				<th>Fare</th>
 				<th>Cabin</th>
 				<th>Embarked</th>
+				<th>CRUD</th>
+				
 			</thead>
 			<tbody>
 				<tr th:each="passenger: ${passengers}">			
@@ -47,6 +49,7 @@
 					<td th:text="${passenger.fare}"></td>
 					<td th:text="${passenger.cabin}"></td>
 					<td th:text="${passenger.embarked}"></td>
+					<td><a href="#" th:href="@{/view/} + ${passenger.passengerId}">View</a>
 					</tr>	
 			</tbody>
 		</table>
