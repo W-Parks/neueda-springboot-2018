@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import uk.ac.belfastmet.TitanicCrud.repository.PassengerRepository;
 import uk.ac.belfastmet.TitanicCrud.domain.Passenger;
+import uk.ac.belfastmet.TitanicCrud.repositories.PassengerRepository;
 
 @Controller
 @RequestMapping

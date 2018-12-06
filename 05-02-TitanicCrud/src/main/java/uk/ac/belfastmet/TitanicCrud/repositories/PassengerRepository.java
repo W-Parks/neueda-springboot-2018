@@ -1,4 +1,4 @@
-package uk.ac.belfastmet.TitanicCrud.repository;
+package uk.ac.belfastmet.TitanicCrud.repositories;
 
 import org.springframework.data.repository.CrudRepository;
 
