@@ -31,11 +31,13 @@
 				<tbody>			
 					<tr>
 						<td>Dwarf ID</td>
-						<td th:text="${dwarf.dwarfId}"></td>
+						<td><input type="text" readonly="readonly" th:field="${dwarf.dwarfId}"></input></td>
 					</tr>					
 					<tr>
 						<td>Name</td>
-						<td><input type="text" class="form-control" th:field="${dwarf.name}"></input></td>
+						<td><input type="text" class="form-control" th:field="${dwarf.name}"></input>
+						<span th:if="${#fields.hasErrors('dwarf.name')}" th:errors="${dwarf.name}" th:class="help-block">Name cannot be empty</span>
+						</td>
 					</tr>				
 					<tr>
 						<td>Author</td>

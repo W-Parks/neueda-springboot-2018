@@ -1,5 +1,7 @@
 package uk.ac.belfastmet.dwarfs.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -39,8 +41,16 @@ public class DwarfController {
 		return "editDwarf";
 	}
 	
+	@GetMapping("/edit/{dwarfId}")
+	public String editDwarf(@PathVariable("dwarfId") Integer dwarfId, Model model) {
+		
+		model.addAttribute("pageTitle", "Edit");
+		model.addAttribute("dwarf", this.dwarfRepository.findByDwarfId(dwarfId));
+		return "editDwarf";
+	}
+	
 	@PostMapping("/save")
-	public String saveDwarf(Dwarf dwarf, BindingResult bindingResult, Model model) {
+	public String saveDwarf(@Valid Dwarf dwarf, BindingResult bindingResult, Model model) {
 		if(bindingResult.hasErrors())
 		{
 			return "editDwarf";

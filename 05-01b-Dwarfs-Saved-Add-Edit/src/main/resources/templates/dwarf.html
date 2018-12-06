@@ -40,8 +40,9 @@
 				<tr th:each="dwarf: ${dwarfs}">
 					<td th:text="${dwarf.name}"></td>
 					<td><img src="../static/images/Happy.png" th:src="@{/images/}+${dwarf.image}"></img></td>
-					<td>
+					<td>						
 						<a href="#" th:href="@{/view/} + ${dwarf.dwarfId}">View</a><br />
+						<a href="#" th:href="@{/edit/} + ${dwarf.dwarfId}">Edit</a><br />
 						<a href="#" th:href="@{/delete/} + ${dwarf.dwarfId}">Delete</a>
 					</td>
 				</tr>					
