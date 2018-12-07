@@ -44,8 +44,8 @@ public class PassengerController {
 	public String editPassenger(@PathVariable("passengerId") Integer passengerId, Model model) {
 		
 		model.addAttribute("pageTitle", "Edit");
-		model.addAttribute("dwarf", this.passengerRepository.findByPassengerId(passengerId));
-		return "editDwarf";
+		model.addAttribute("passenger", this.passengerRepository.findByPassengerId(passengerId));
+		return "editPassengers";
 	}
 	
 	@PostMapping("/save")
