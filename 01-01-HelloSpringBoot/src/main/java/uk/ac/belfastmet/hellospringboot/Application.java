@@ -13,7 +13,6 @@ public class Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 		//Test comment
-		//Test comment 2
 		logger.info("Hello Spring Boot");
 	}
 }
