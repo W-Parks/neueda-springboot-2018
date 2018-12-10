@@ -2,6 +2,7 @@ package uk.ac.belfastmet.titanicconsumer.domain;
 
 import java.util.ArrayList;
 
+@Data
 public class AllPassengers {
 
 	private ArrayList<Passenger> allPassengers;
