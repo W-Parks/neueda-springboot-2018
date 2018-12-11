@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -91,7 +92,7 @@ public class PassengerController {
 		return "redirect:/titanic";
 	}
 	
-	@GetMapping("/save")
+	@PostMapping("/save")
 	public String editPassenger(Passenger passenger, @RequestParam("addUpdate") String addUpdate, Model model) {
 				
 		if (addUpdate.equals("Add Passenger")) {
@@ -101,7 +102,6 @@ public class PassengerController {
 			this.passengerService.update(passenger);
 			return "redirect:/titanic/view/" + passenger.getPassengerId();
 		}
-		
 		
 	}
 	
