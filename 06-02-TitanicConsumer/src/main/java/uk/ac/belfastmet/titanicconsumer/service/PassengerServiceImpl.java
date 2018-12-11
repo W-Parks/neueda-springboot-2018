@@ -25,7 +25,7 @@ public class PassengerServiceImpl implements PassengerService {
 	
 	public ArrayList<Passenger> list(){
 		
-		String listPassengerUrl = this.apiUrl + "/passenger/";
+		String listPassengerUrl = this.apiUrl + "/passengers/";
 		
 		AllPassengers allPassengers = this.restTemplate.getForObject(listPassengerUrl, AllPassengers.class);
 		
@@ -34,7 +34,7 @@ public class PassengerServiceImpl implements PassengerService {
 	
 	public Passenger get(Integer passengerId) {
 		
-		String getPassengerUrl = this.apiUrl + "/passenger/" + passengerId;
+		String getPassengerUrl = this.apiUrl + "/passengers/" + passengerId;
 		
 		Passenger passenger = this.restTemplate.getForObject(getPassengerUrl, Passenger.class);
 		
@@ -43,7 +43,7 @@ public class PassengerServiceImpl implements PassengerService {
 	
 	public Passenger add(Passenger passenger) {
 		
-		String addPassengerUrl = this.apiUrl + "/passenger/" + passenger.getPassengerId();
+		String addPassengerUrl = this.apiUrl + "/passengers/" + passenger.getPassengerId();
 		
 		this.restTemplate.postForObject(addPassengerUrl, passenger, Passenger.class);
 		
@@ -52,7 +52,7 @@ public class PassengerServiceImpl implements PassengerService {
 	
 	public Passenger update(Passenger passenger) {
 
-		String updatePassengerUrl = this.apiUrl + "/passenger/" + passenger.getPassengerId();
+		String updatePassengerUrl = this.apiUrl + "/passengers/" + passenger.getPassengerId();
 		
 		this.restTemplate.put(updatePassengerUrl, passenger, Passenger.class);
 		
@@ -61,7 +61,7 @@ public class PassengerServiceImpl implements PassengerService {
 	
 	public void delete(Integer passengerId) {
 		
-		String deletePassengerUrl = this.apiUrl + "/passenger/" + passengerId;
+		String deletePassengerUrl = this.apiUrl + "/passengers/" + passengerId;
 		
 		this.restTemplate.delete(deletePassengerUrl);
 		
