@@ -14,7 +14,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import uk.ac.belfastmet.titanicconsumer.domain.AllPassengers;
 import uk.ac.belfastmet.titanicconsumer.domain.Passenger;
-import uk.ac.belfastmet.titanicconsumer.service.PassengerService;
 import uk.ac.belfastmet.titanicconsumer.service.PassengerServiceImpl;
 
 @Controller
