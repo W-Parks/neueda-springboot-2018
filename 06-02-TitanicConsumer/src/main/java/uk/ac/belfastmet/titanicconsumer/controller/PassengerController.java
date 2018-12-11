@@ -10,20 +10,32 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import uk.ac.belfastmet.titanicconsumer.domain.AllPassengers;
 import uk.ac.belfastmet.titanicconsumer.domain.Passenger;
 import uk.ac.belfastmet.titanicconsumer.service.PassengerService;
+import uk.ac.belfastmet.titanicconsumer.service.PassengerServiceImpl;
 
 @Controller
 @RequestMapping("/titanic")
 public class PassengerController {
 	
 	@Autowired
-	PassengerService passengerService;
+	PassengerServiceImpl passengerService;
 	AllPassengers allPassengers;
 	
-	public PassengerController(PassengerService passengerService, AllPassengers allPassengers) {
+	//Constructors
+	public PassengerController() {
+		super();
+	}
+	
+	public PassengerController(PassengerServiceImpl passengerService) {
+		super();
+		this.passengerService = passengerService;
+	}
+
+	public PassengerController(PassengerServiceImpl passengerService, AllPassengers allPassengers) {
 		super();
 		this.passengerService = passengerService;
 		this.allPassengers = allPassengers;
 	}
+	
 	
 	@GetMapping("/{passengerId}")
 	public String viewPassenger(@PathVariable("passengerId") Integer passengerId, Model model) {
@@ -32,6 +44,7 @@ public class PassengerController {
 		
 		Passenger passenger = this.passengerService.get(passengerId);
 		model.addAttribute("passenger", passenger);
+		
 		return "viewPassenger";
 	}
 	
