@@ -20,13 +20,13 @@
 	<nav th:replace="layouts/nav :: navFragment"></nav><!-- navbar -->			
 	<div class="row"><!-- jumbotron start -->
 		<div class="jumbotron">
-			<h1 th:text="${pageTitle} + ' ' + Passengers">Passengers</h1>
+			<h1 th:text="${pageTitle}">Passengers</h1>
 		  	<p></p>
 		</div>
 	</div><!-- jumbotron end -->
 	
 	<div class="container"><!-- Container -->
-		<form class="form-horizontal" th:action="@{/save}" method="post">	
+		<form class="form-horizontal" th:action="@{/titanic/save}" method="post">	
 			<table class="table table-striped"><!-- Table -->
 				<thead><!-- Table Header -->
 					<th>Column</th>
@@ -85,6 +85,7 @@
 					</tr>						
 				</tbody>
 			</table>
+			<input type="hidden" id="addUpdate" name="addUpdate" th:value="${pageTitle}" />
 			<button type="submit" class="btn btn-primary">Save</button>
 		</form>
 	</div><!-- Container -->			

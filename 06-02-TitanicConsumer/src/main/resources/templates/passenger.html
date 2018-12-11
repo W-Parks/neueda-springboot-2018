@@ -27,7 +27,7 @@
 	
 	<div class="container"><!-- Container -->
 		<p>Titanic Passengers</p>
-		<p><a href="#" th:href="@{/add/}">Add New Passenger</a><br /></p>
+		<p><a href="#" th:href="@{/titanic/add/}">Add New Passenger</a><br /></p>
 		
 		<table class="table table-striped">
 		<!-- Table -->
@@ -64,14 +64,14 @@
 					<td th:text="${passenger.embarked}"></td>
 					<td>
 						<!-- CRUD Functions -->
-						<a href="#" th:href="@{/view/} + ${passenger.passengerId}">View</a><br />
-						<a href="#" th:href="@{/edit/} + ${passenger.passengerId}">Edit</a><br />
-						<a href="#" th:href="@{/delete/} + ${passenger.passengerId}">Delete</a>
+						<a href="#" th:href="@{/titanic/view/} + ${passenger.passengerId}">View</a><br />
+						<a href="#" th:href="@{/titanic/edit/} + ${passenger.passengerId}">Edit</a><br />
+						<a href="#" th:href="@{/titanic/delete/} + ${passenger.passengerId}">Delete</a>
 					</td>
 					</tr>	
 			</tbody>
 		</table>
-		<p><a href="#" th:href="@{/add/}">Add New Passenger</a><br /></p>
+		<p><a href="#" th:href="@{/titanic/add/}">Add New Passenger</a><br /></p>
 	</div><!-- Container -->			
 	
 	<!-- Local Scripts (Override Online Scripts) -->

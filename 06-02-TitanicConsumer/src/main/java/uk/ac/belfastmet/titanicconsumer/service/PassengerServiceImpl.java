@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.util.UriComponentsBuilder;
 
 import uk.ac.belfastmet.titanicconsumer.domain.AllPassengers;
 import uk.ac.belfastmet.titanicconsumer.domain.Passenger;
@@ -43,7 +42,7 @@ public class PassengerServiceImpl implements PassengerService {
 	
 	public Passenger add(Passenger passenger) {
 		
-		String addPassengerUrl = this.apiUrl + "/passengers/" + passenger.getPassengerId();
+		String addPassengerUrl = this.apiUrl + "/passengers/";
 		
 		this.restTemplate.postForObject(addPassengerUrl, passenger, Passenger.class);
 		
