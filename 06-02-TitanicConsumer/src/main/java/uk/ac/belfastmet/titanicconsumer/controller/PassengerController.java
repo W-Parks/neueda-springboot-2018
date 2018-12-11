@@ -1,5 +1,7 @@
 package uk.ac.belfastmet.titanicconsumer.controller;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -35,18 +37,26 @@ public class PassengerController {
 		this.passengerService = passengerService;
 		this.allPassengers = allPassengers;
 	}
-	
-	
-	@GetMapping("/{passengerId}")
-	public String viewPassenger(@PathVariable("passengerId") Integer passengerId, Model model) {
+
+	@GetMapping("")
+	public String listPassengers(Model model) {
 		
-		model.addAttribute("pageTitle", "View Passenger");
+		model.addAttribute("pageTitle", "List Passenger");
 		
-		Passenger passenger = this.passengerService.get(passengerId);
-		model.addAttribute("passenger", passenger);
+		ArrayList<Passenger> passengers = this.passengerService.list();
+		model.addAttribute("passengers", passengers);
 		
-		return "viewPassenger";
+		return "passenger";
 	}
 	
+//	@GetMapping("/passengers")
+//	public String editPassenger(Model model) {
+//		
+//		model.addAttribute("pageTitle", "Edit Passenger");
+//		ArrayList<Passenger> passengers = this.passengerService.list();
+//		model.addAttribute("passengers", passengers);
+//		
+//		return "editpassenger";
+//	}
 	
 }
