@@ -25,12 +25,12 @@ public class EventController {
 		String eventUrl = "https://neueda-flask-bndouglas.c9users.io/belfast-events/api/";
 		RestTemplate restTemplate = new RestTemplate();
 		AllEvents event = restTemplate.getForObject(eventUrl, AllEvents.class);
-		//System.out.println(event.getAllEvents().toString());
+		//System.out.println(event.getAllEvents());
 //		//slf4j
 //		Logger logger = LoggerFactory.getLogger(AllEvents.class);
 //		logger.info(event.getAllEvents().toString());
 		
-		model.addAttribute("event",event.getAllEvents());
+		model.addAttribute("events", event.getAllEvents());
 		return "events";	//events.html
 	}
 	
