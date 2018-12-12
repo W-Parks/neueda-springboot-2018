@@ -9,4 +9,11 @@ public class Location {
 	private Float latitude;
 	private Float longitude;
 	
+public String toString() {
+		
+		String location = "\n" + this.getName() + " , " + this.getLatitude() + " , " + this.getLongitude() + "\n";
+		
+		return location;
+	}
+
 }

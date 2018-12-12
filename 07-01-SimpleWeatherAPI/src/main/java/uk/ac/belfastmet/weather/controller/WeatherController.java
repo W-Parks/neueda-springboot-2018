@@ -21,19 +21,20 @@ public class WeatherController {
 	}
 	
 	@GetMapping("/weather/{location}")
-	public String belfast(@PathVariable("location") String location, Model model) {
+	public String weather(@PathVariable("location") String location, Model model) {
 		
-		//build for belfast
-		String belfastWeatherUrl = "http://www.codingfury.net/training/weathersample/weather.php?location=belfast";
+		String weatherUrl = "http://www.codingfury.net/training/weathersample/weather.php?location=" + location;
 		RestTemplate restTemplate = new RestTemplate();
-		TodaysWeather todaysWeather = restTemplate.getForObject(belfastWeatherUrl, TodaysWeather.class);
+		TodaysWeather todaysWeather = restTemplate.getForObject(weatherUrl, TodaysWeather.class);
 		
 		//slf4j
 		Logger logger = LoggerFactory.getLogger(TodaysWeather.class);
-		logger.info(todaysWeather.toString());
+		logger.info(todaysWeather.getLocation().toString());
+		logger.info(todaysWeather.getWeather().toString());
+		logger.info(todaysWeather.getWeather().getWind().toString());
 		
 		model.addAttribute("todaysWeather",todaysWeather);
-		return "weather";
+		return "weather";	//weather.html
 	}
 	
 }
