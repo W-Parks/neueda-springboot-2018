@@ -23,14 +23,30 @@
 <nav th:replace="layouts/nav :: navFragment"></nav><!-- navbar -->
 	<div class="row"><!-- jumbotron start -->
 		<div class="jumbotron text-centre">
-			<h1>Events </h1>
+			<h1>Events In Belfast</h1>
 		</div>
 	</div><!-- jumbotron end -->
 	<div class="container"><!-- Container -->		
-		<div class="row">
-		
-		</div>
-		
+		<table class="table table-striped"><!-- Table -->
+			<thead><!-- Table Header -->
+				<th>Event Title</th>
+				<th>Start Date</th>
+				<th>Location</th>								
+				<th>Cost</th>							
+				<th>Details</th>							
+				<th>Event Id</th>								
+			</thead>
+			<tbody><!-- Table Body -->
+				<tr th:each="event: ${events}">			
+					<td th:text="${event.title}">Name</td>
+					<td th:text="${#dates.format(event.startDate, 'dd/MM/yyyy')}"></td>
+					<td th:text="${event.venue}"></td>
+					<td th:text="${event.cost}"></td>
+					<td></td>
+					<td th:text="${event.identifier}"></td>
+				</tr>	
+			</tbody>
+		</table>		
 	</div><!-- Container -->
 </body>
 </html>
