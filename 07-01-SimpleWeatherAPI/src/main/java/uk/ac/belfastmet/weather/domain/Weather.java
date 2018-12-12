@@ -16,8 +16,7 @@ public class Weather {
 	private Wind wind;	
 	private String image;
 	
-	
-public String toString() {
+	public String toString() {
 		
 		String weather = "\n" + this.getDescription() + " , " + 
 				this.getPrecipitation() + " , " +
