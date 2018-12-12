@@ -23,21 +23,12 @@
 	<nav th:replace="layouts/nav :: navFragment"></nav><!-- navbar -->	
 	<div class="row"><!-- jumbotron start -->
 		<div class="jumbotron text-centre">
-			<h1>Weather</h1>
-			<p>Choose a location from the dropdown</p>		  	
+			<h1>Events</h1>		  	
 		</div>
 	</div><!-- jumbotron end -->	
 	<div class="container">	<!-- Container -->
-		<div class="dropdown"><!-- Dropdown -->
-		  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Locations</button>
-		  <div class="dropdown-menu"><!-- Dropdown menu -->
-		    <a class="dropdown-item" href="/weather/belfast">Belfast</a>
-		    <div class="dropdown-divider"></div>
-		    <a class="dropdown-item" href="/weather/london">London</a>
-		    <div class="dropdown-divider"></div>
-		    <a class="dropdown-item" href="/weather/dublin">Dublin</a>
-		  </div><!-- Dropdown menu -->
-		</div><!-- Dropdown -->
+		<a href="/events" class="btn btn-info" role="button">Events</a>
+		
 	</div><!-- Conatainer -->	
 </body>
 </html>
