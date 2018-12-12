@@ -17,7 +17,7 @@ public class WeatherController {
 
 	@GetMapping("")
 	public String home() {
-		return "home";
+		return "homePage";
 	}
 	
 	@GetMapping("/weather/{location}")
