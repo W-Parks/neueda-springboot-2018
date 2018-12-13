@@ -33,7 +33,7 @@
 			</thead>
 			<tbody><!-- Table Body -->
 				<tr th:each="news: ${news}">			
-					<td th:text="${news}">Number</td>					
+					<td><a th:href="@{https://news.ycombinator.com/item?id=} + ${news}">Link</a></td>			
 				</tr>	
 			</tbody>
 		</table>		
